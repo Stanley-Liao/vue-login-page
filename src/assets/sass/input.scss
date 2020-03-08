@@ -1,0 +1,58 @@
+@import "variables";
+::placeholder { 
+    color: $placeholder-color;
+    opacity: 1; 
+}
+:-ms-input-placeholder { 
+    color: $placeholder-color;
+}
+::-ms-input-placeholder {
+    color: $placeholder-color;
+}
+@mixin vertical {
+    position: absolute;
+    top:50%;
+    transform: translate(-50%, -50%);  
+}
+input{
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    border: 2px solid;
+    border-color: $light-theme-color;
+    border-radius: 5px;
+    padding: 15px 15px 15px 45px;
+    height: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px; 
+    &:focus {
+        border-color: $theme-color;
+    }     
+}
+.root{
+	  position: relative;
+}
+.icon{
+  	left: 25px;
+    @include vertical;
+}
+.addon{
+  	cursor: pointer;
+  	right: -10px;
+  	font-size: 14px;
+    @include vertical;
+}
+.addon-split:before {
+    content: "";
+    display: block;
+    height: 22px;
+    left: -15px;
+    width: 1px;
+    background: $placeholder-color;
+    @include vertical;
+}
+.offset{
+	   padding-right: 90px;
+}
